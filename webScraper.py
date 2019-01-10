@@ -18,7 +18,7 @@ data = soup.findAll('div', {'class':['product-container']})                     
 listOfTitles = []                                                                      #3 list[] instead of
 listOfDescriptions = []                                                                # 1 list[][], for read-
 listofPrices = []                                                                      # abllity and example 
-idx = 0                                                                                # matters
+i = 0                                                                                  # matters
 
 for i in data:
     tempTitle = i.findAll('a', title=True)                         #find all 'a' tags that contain title atribute
