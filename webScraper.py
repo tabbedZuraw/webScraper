@@ -3,13 +3,13 @@ import bs4
 import xml
 import mysql.connector
 
-mydb = mysql.connector.connect(                                                        #DB Setup
-    host = "",
-    user = "",
-    passwd = "",
-    datanase= "",)
+#mydb = mysql.connector.connect(                                                        #DB Setup
+#    host = "",
+#    user = "",
+#    passwd = "",
+#    datanase= "",)
 
-mycursor = mydb.cursor()
+#mycursor = mydb.cursor()
 
 url = "https://boardgamer.ie/best-sales"                                               
 pageReq = requests.get(url)                                                            #Get source
@@ -28,9 +28,9 @@ for i in data:
     tempPrice = i.findAll('span')                                  #find all 'span' tags 
     listofPrices.append(tempPrice[0].text.split(' ')[2])           #split the return value at space to remove the
                                                                    #currentcy sing, and unnecessary characters
-for l in listOf:
-    sql = "INSERT INTO boardGames ( title, description, price, source) VALUES (%s, %s, %s, %s)"
-    val = (listOfTitles[i], listOfDescriptions[i], listofPrices[i], url)            #standard SQL statements
-    mycursor.execute(sql, val)
-    mydb.commit
-    i += 1
+#for l in listOf:
+#    sql = "INSERT INTO boardGames ( title, description, price, source) VALUES (%s, %s, %s, %s)"
+#    val = (listOfTitles[i], listOfDescriptions[i], listofPrices[i], url)            #standard SQL statements
+#    mycursor.execute(sql, val)
+#    mydb.commit
+#    i += 1
