@@ -28,10 +28,10 @@ for i in data:
     tempPrice = i.findAll('span')                                  #find all 'span' tags 
     listofPrices.append(tempPrice[0].text.split(' ')[2])           #split the return value at space to remove the
                                                                    #currentcy sing, and unnecessary characters
-i = 0
+i = 1
 for l in listOfTitles:
     sql = "INSERT INTO BoardGames (Position, Name, Description, Price, Source) VALUES (%s, %s, %s, %s, %s)"
     val = (i, listOfTitles[i], listOfDescriptions[i], listofPrices[i], url)            #standard SQL statements
     mycursor.execute(sql, val)
-    mydb.commit
+    mydb.commit()
     i += 1
